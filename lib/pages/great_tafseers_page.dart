@@ -163,11 +163,11 @@ class _GreatTafseersPageState extends State<GreatTafseersPage> {
             ),
             Positioned(
               bottom:screenHeight!*0.0275,
-              left:screenWidth!*0.485,
+              left:screenWidth!*0.481,
               child: BuildDefaultText(
                 color:0xFF000000,
                 text: pageNumber,
-                fontSize:8,
+                fontSize:7,
                 bold: true,
               ),
             ),

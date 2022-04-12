@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:great_tafseers/pages/great_tafseers_page.dart';
 import 'package:great_tafseers/pages/start_up_page.dart';
+import 'package:great_tafseers/resource/colors.dart';
 
 void main() {
   runApp(const MyApp());

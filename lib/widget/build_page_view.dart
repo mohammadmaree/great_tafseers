@@ -18,14 +18,12 @@ class BuildPageView extends StatelessWidget {
     return Stack(
       children: [
         Positioned(
-          top:screenHeight*0.12,
-          bottom:screenHeight*0.05,
-          left:screenWidth*0.08,
-          right:screenWidth*0.08,
+          top:screenHeight*0.122,
+          bottom:screenHeight*0.055,
           child: BuildDefaultImage(
             image:page,
-            screenWidth:screenWidth*084,
-            screenHeight:screenHeight*0.87,
+            screenWidth:screenWidth,
+            screenHeight:screenHeight*0.825,
           ),
         ),
       ],

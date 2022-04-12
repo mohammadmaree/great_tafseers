@@ -1,8 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:great_tafseers/resource/colors.dart';
 import 'package:great_tafseers/resource/images.dart';
+import 'package:great_tafseers/resource/strings.dart';
+import 'package:great_tafseers/widget/build_app_bar.dart';
 import 'package:great_tafseers/widget/build_default_image.dart';
 import 'package:great_tafseers/widget/build_default_image_icon.dart';
+import 'package:great_tafseers/widget/build_default_show_dialog.dart';
 import 'package:great_tafseers/widget/build_default_text.dart';
 import 'package:great_tafseers/widget/build_page_view.dart';
 
@@ -25,11 +29,11 @@ class _GreatTafseersPageState extends State<GreatTafseersPage> {
   List<String>jozaNumbers=[JOZA016,JOZA017,JOZA019,JOZA023];
   List<String>pageNumbers=['321','325','367','452'];
 
-  bool mark=false;
-  void changeMark(){
+   bool mark = false;
+  changeMark(){
     setState(() {
       mark=!mark;
-      print('changeMark');
+      print(mark);
     });
   }
 
@@ -49,6 +53,7 @@ class _GreatTafseersPageState extends State<GreatTafseersPage> {
   Widget build(BuildContext context) {
     screenWidth = MediaQuery.of(context).size.width;
     screenHeight = MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
+
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -66,56 +71,9 @@ class _GreatTafseersPageState extends State<GreatTafseersPage> {
                 screenHeight:screenHeight!*0.925,
               ),
             ),
-            Column(
-              children: [
-                Row(
-                  children: [
-                    BuildDefaultImageIcon(
-                      screenWidth:screenWidth!*0.091,
-                      screenHeight:screenHeight!*0.091,
-                      image: ICON_PLAY_END,
-                    ),
-                    BuildDefaultImageIcon(
-                      screenWidth:screenWidth!*0.091,
-                      screenHeight:screenHeight!*0.091,
-                      image: ICON_PLAY_ALL,
-                    ),
-                    BuildDefaultImageIcon(
-                      screenWidth:screenWidth!*0.091,
-                      screenHeight:screenHeight!*0.091,
-                      image: ICON_AYALIST,
-                    ),
-                    BuildDefaultImageIcon(
-                      screenWidth:screenWidth!*0.091,
-                      screenHeight:screenHeight!*0.091,
-                      image: ICON_SETTINGS,
-                    ),
-                    BuildDefaultImageIcon(
-                      screenWidth:screenWidth!*0.091,
-                      screenHeight:screenHeight!*0.091,
-                      image: ICON_LIST,
-                    ),
-                    BuildDefaultImageIcon(
-                      screenWidth:screenWidth!*0.091,
-                      screenHeight:screenHeight!*0.091,
-                      image:  ICON_BOOK_MARK_LIST,
-                    ),
-                    BuildDefaultImageIcon(
-                      screenWidth:screenWidth!*0.091,
-                      screenHeight:screenHeight!*0.091,
-                      image:ICON_ADD_BOOK_MARK,
-                      function: (){
-                        changeMark();
-                      },
-                    ),
-                    BuildDefaultImageIcon(
-                      screenWidth:screenWidth!*0.091,
-                      screenHeight:screenHeight!*0.091,
-                      image: ICON_SEARCH,
-                    ),
-                  ],
-                ),
-              ],
+            BuildAppBar(
+              screenWidth:screenWidth!,
+              screenHeight:screenHeight!,
             ),
             Positioned(
               top:screenHeight!*0.065,
@@ -125,15 +83,14 @@ class _GreatTafseersPageState extends State<GreatTafseersPage> {
                 screenHeight:screenHeight!*0.935,
               ),
             ),
-            Container(
-              width:screenWidth,
-              height:screenHeight!,
+            Padding(
+              padding:  EdgeInsets.symmetric(horizontal: screenWidth!*0.08,),
               child: PageView.builder(
                 scrollDirection: Axis.horizontal,
                   controller: controller,
                   itemBuilder:(context, index) =>
                       BuildPageView(
-                        screenWidth:screenWidth!,
+                        screenWidth:screenWidth!*0.84,
                         screenHeight:screenHeight!,
                         page:pages[index],
                       ),
@@ -167,9 +124,23 @@ class _GreatTafseersPageState extends State<GreatTafseersPage> {
               child: BuildDefaultText(
                 color:0xFF000000,
                 text: pageNumber,
-                fontSize:7,
+                fontSize:screenWidth!*0.015+screenHeight!*0.005,
                 bold: true,
               ),
+            ),
+            Positioned(
+              top:screenHeight!*0.013,
+              right:screenWidth!*0.15,
+              child: InkWell(
+                onTap: (){
+                  changeMark();
+                },
+                child: Container(
+                  color: Color(HEX_WHITE_COLOR).withOpacity(0.0),
+                  width:screenWidth!*0.091,
+                  height:screenWidth!*0.091,
+                ),
+              )
             ),
             if(mark)
             Positioned(

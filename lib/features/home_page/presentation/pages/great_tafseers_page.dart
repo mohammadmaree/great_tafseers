@@ -1,14 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:great_tafseers/resource/colors.dart';
-import 'package:great_tafseers/resource/images.dart';
-import 'package:great_tafseers/resource/strings.dart';
-import 'package:great_tafseers/widget/build_app_bar.dart';
-import 'package:great_tafseers/widget/build_default_image.dart';
-import 'package:great_tafseers/widget/build_default_image_icon.dart';
-import 'package:great_tafseers/widget/build_default_show_dialog.dart';
-import 'package:great_tafseers/widget/build_default_text.dart';
-import 'package:great_tafseers/widget/build_page_view.dart';
+import 'package:great_tafseers/core/resource/colors.dart';
+import 'package:great_tafseers/core/resource/images.dart';
+import 'package:great_tafseers/features/home_page/presentation/widget/widgets.dart';
+
 
 class GreatTafseersPage extends StatefulWidget {
   static String routeName = 'GreatTafseersPageRouteName';

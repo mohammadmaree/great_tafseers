@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:great_tafseers/resource/images.dart';
-import 'package:great_tafseers/widget/build_default_image.dart';
-import 'package:great_tafseers/widget/build_default_text.dart';
+import 'package:great_tafseers/features/home_page/presentation/widget/build_default_image.dart';
 
 class BuildPageView extends StatelessWidget {
   final double screenWidth;

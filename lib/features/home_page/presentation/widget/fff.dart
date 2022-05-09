@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:great_tafseers/resource/colors.dart';
+import 'package:great_tafseers/core/resource/colors.dart';
 class rrr extends StatelessWidget {
   final double width;
   final double height;

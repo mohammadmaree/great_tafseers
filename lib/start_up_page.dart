@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:great_tafseers/pages/great_tafseers_page.dart';
-import 'package:great_tafseers/resource/images.dart';
-import 'package:great_tafseers/widget/build_default_image.dart';
+import 'package:great_tafseers/core/resource/images.dart';
+import 'package:great_tafseers/features/home_page/presentation/pages/great_tafseers_page.dart';
+import 'package:great_tafseers/features/home_page/presentation/widget/build_default_image.dart';
 
 class StartUpPage extends StatefulWidget {
   @override

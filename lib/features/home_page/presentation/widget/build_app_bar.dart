@@ -1,9 +1,10 @@
 
 import 'package:flutter/material.dart';
-import 'package:great_tafseers/resource/images.dart';
-import 'package:great_tafseers/resource/strings.dart';
-import 'package:great_tafseers/widget/build_default_image_icon.dart';
-import 'package:great_tafseers/widget/build_default_show_dialog.dart';
+import 'package:great_tafseers/core/resource/images.dart';
+import 'package:great_tafseers/core/resource/strings.dart';
+import 'package:great_tafseers/features/home_page/presentation/widget/build_default_image_icon.dart';
+import 'package:great_tafseers/features/home_page/presentation/widget/build_default_show_dialog.dart';
+
 
 class BuildAppBar extends StatelessWidget {
   final double screenHeight;

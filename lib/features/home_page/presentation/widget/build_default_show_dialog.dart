@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:great_tafseers/resource/colors.dart';
-import 'package:great_tafseers/resource/strings.dart';
+import 'package:great_tafseers/core/resource/colors.dart';
+import 'package:great_tafseers/core/resource/strings.dart';
+
 class BuildDefaultShowDialog extends StatelessWidget {
   final double width;
   final double height;

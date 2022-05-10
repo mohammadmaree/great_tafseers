@@ -7,9 +7,9 @@ abstract class UseCase<Type, Params> {
 }
 
 class Params extends Equatable{
-  final int number;
+  final result;
 
-  Params({required this.number});
+  Params({required this.result});
   @override
   List<Object?> get props => [];
 }

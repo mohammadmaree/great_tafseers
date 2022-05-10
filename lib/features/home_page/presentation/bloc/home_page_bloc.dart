@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:great_tafseers/core/usecases/usecase.dart';
 import 'package:great_tafseers/features/home_page/domain/entities/home_page.dart';
 import 'package:great_tafseers/features/home_page/domain/usecases/swipe_page_view.dart';
 
@@ -19,6 +20,15 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
   Stream<HomePageState> mapEventToState(
       HomePageEvent event,
       ) async* {
+    if (event is GetDataHomePageEvent) {
+      //yield ViewPageStateLoading();
+      final failureOrPageView = await swipePageView(
+          Params(result: event.index));
+      yield failureOrPageView.fold(
+              (failure) =>
+              ViewPageStateError('failure'),
+              (home) => ViewPageStateLoaded(home));
+    }
 
   }
 

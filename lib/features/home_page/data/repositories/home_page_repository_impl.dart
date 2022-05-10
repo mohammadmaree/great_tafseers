@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:great_tafseers/core/error/exception.dart';
 import 'package:great_tafseers/core/error/failures.dart';
 import 'package:great_tafseers/core/platform/network_info.dart';
 import 'package:great_tafseers/features/home_page/data/datasources/home_page_local_data_source.dart';
@@ -18,7 +19,12 @@ class HomePageRepositoryImpl implements HomePageRepository{
   });
 
   @override
-  Future<Either<Failure, HomePage>> PageViewSwipe(int index) {
-    throw UnimplementedError();
+  Future<Either<Failure, HomePage>> PageViewSwipe(int index)async {
+    try {
+      final localHome = await localDataSource.getDataFromIndex(index);
+      return Right(localHome);
+    } on CacheException {
+      return  Left(CacheFailure());
+    }
   }
 }

@@ -12,6 +12,6 @@ class SwipePageView implements UseCase<HomePage,Params>{
 
   @override
   Future<Either<Failure, HomePage>> call(Params params) async {
-    return await repository.PageViewSwipe(params.number);
+    return await repository.PageViewSwipe(params.result);
   }
 }

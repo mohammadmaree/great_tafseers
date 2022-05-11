@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:great_tafseers/core/resource/images.dart';
 import 'package:great_tafseers/core/resource/strings.dart';
 import 'package:great_tafseers/features/home_page/presentation/widget/build_default_image_icon.dart';
-import 'package:great_tafseers/features/home_page/presentation/widget/build_default_show_dialog.dart';
+import 'package:great_tafseers/features/play_page/presentaion/pages/play_show_dialog.dart';
+import 'package:great_tafseers/features/settings_page/presentaion/pages/settings_page.dart';
 
 
 class BuildAppBar extends StatelessWidget {
@@ -27,10 +28,9 @@ class BuildAppBar extends StatelessWidget {
                 showDialog(
                   barrierDismissible: false,
                   context: context,
-                  builder:(context) => BuildDefaultShowDialog(
+                  builder:(context) => PlayShowDialog(
                     width:screenWidth,
                     height:screenHeight,
-                    text:NOTE,
                   ),
                 );
               },
@@ -43,10 +43,9 @@ class BuildAppBar extends StatelessWidget {
                 showDialog(
                   barrierDismissible: false,
                   context: context,
-                  builder:(context) => BuildDefaultShowDialog(
+                  builder:(context) => PlayShowDialog(
                     width:screenWidth,
                     height:screenHeight,
-                    text:NOTE,
                   ),
                 );
               },
@@ -55,89 +54,31 @@ class BuildAppBar extends StatelessWidget {
               screenWidth:screenWidth*0.091,
               screenHeight:screenHeight*0.091,
               image: ICON_AYALIST,
-              function: (){
-                showDialog(
-                  barrierDismissible: false,
-                  context: context,
-                  builder:(context) => BuildDefaultShowDialog(
-                    width:screenWidth,
-                    height:screenHeight,
-                    text:NOTE,
-                  ),
-                );
-              },
             ),
             BuildDefaultImageIcon(
               screenWidth:screenWidth*0.091,
               screenHeight:screenHeight*0.091,
               image: ICON_SETTINGS,
-              function: (){
-                showDialog(
-                  barrierDismissible: false,
-                  context: context,
-                  builder:(context) => BuildDefaultShowDialog(
-                    width:screenWidth,
-                    height:screenHeight,
-                    text:NOTE,
-                  ),
-                );
-              },
             ),
             BuildDefaultImageIcon(
               screenWidth:screenWidth*0.091,
               screenHeight:screenHeight*0.091,
               image: ICON_LIST,
-              function: (){
-                showDialog(
-                  barrierDismissible: false,
-                  context: context,
-                  builder:(context) => BuildDefaultShowDialog(
-                    width:screenWidth,
-                    height:screenHeight,
-                    text:NOTE,
-                  ),
-                );
-              },
             ),
             BuildDefaultImageIcon(
               screenWidth:screenWidth*0.091,
               screenHeight:screenHeight*0.091,
               image:  ICON_BOOK_MARK_LIST,
-              function: (){
-                showDialog(
-                  barrierDismissible: false,
-                  context: context,
-                  builder:(context) => BuildDefaultShowDialog(
-                    width:screenWidth,
-                    height:screenHeight,
-                    text:NOTE,
-                  ),
-                );
-              },
             ),
             BuildDefaultImageIcon(
               screenWidth:screenWidth*0.091,
               screenHeight:screenHeight*0.091,
               image:ICON_ADD_BOOK_MARK,
-              function:(){
-                //changeMark();
-              },
             ),
             BuildDefaultImageIcon(
               screenWidth:screenWidth*0.091,
               screenHeight:screenHeight*0.091,
               image: ICON_SEARCH,
-              function: (){
-                showDialog(
-                  barrierDismissible: false,
-                  context: context,
-                  builder:(context) => BuildDefaultShowDialog(
-                    width:screenWidth,
-                    height:screenHeight,
-                    text:NOTE,
-                  ),
-                );
-              },
             ),
           ],
         ),

@@ -19,27 +19,7 @@ class PlayPageRepositoryImpl implements PlayPageRepository{
   });
 
   @override
-  Future<Either<Failure, PlayPage>> chooseHizbPlay(String numberOfHizb) {
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<Either<Failure, PlayPage>> chooseJozaPlay(String numberOfJoza) {
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<Either<Failure, PlayPage>> choosePagePlay(String numberOfPage) {
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<Either<Failure, PlayPage>> chooseSoraPlay(String nameOfSora) {
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<Either<Failure, PlayPage>> submit(String result) {
+  Future<Either<Failure, PlayPage>> choosePlay(String selected) {
     throw UnimplementedError();
   }
 

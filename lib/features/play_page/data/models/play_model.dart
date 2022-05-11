@@ -6,13 +6,19 @@ class PlayModel extends PlayPage {
         required String numberOfJoza,
         required String numberOfHizb,
         required String numberOfPage,
-        required String imageOfSora})
+        required String imageOfSora,
+        required bool nextPage,
+        required bool repetition,
+      })
       : super(
       nameOfSora: nameOfSora,
       numberOfJoza: numberOfJoza,
       numberOfHizb : numberOfHizb,
       numberOfPage: numberOfPage,
-      imageOfSora: imageOfSora);
+      imageOfSora: imageOfSora,
+      nextPage: nextPage,
+      repetition: repetition,
+  );
 
   factory PlayModel.fromJson(Map<String, dynamic> json) {
     return PlayModel(
@@ -20,7 +26,10 @@ class PlayModel extends PlayPage {
         numberOfJoza: json["numberOfJoza"],
         numberOfHizb: json["numberOfHizb"],
         numberOfPage: json["numberOfPage"],
-        imageOfSora: json["imageOfSora"]);
+        imageOfSora: json["imageOfSora"],
+        nextPage: json["nextPage"],
+        repetition: json["repetition"],
+    );
   }
 
   Map<String, dynamic> toJson() {
@@ -29,7 +38,9 @@ class PlayModel extends PlayPage {
       'numberOfJoza': numberOfJoza,
       'numberOfHizb':numberOfHizb,
       'numberOfPage': numberOfPage,
-      'imageOfSora': imageOfSora
+      'imageOfSora': imageOfSora,
+      'nextPage':nextPage,
+      'repetition':repetition,
     };
   }
 }

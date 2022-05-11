@@ -1,21 +1,23 @@
 import 'package:equatable/equatable.dart';
 
 class SettingsPage extends Equatable {
-  final String nameOfSora;
-  final String numberOfJoza;
-  final String numberOfHizb;
-  final String numberOfPage;
-  final String imageOfSora;
+  final List<String> readers;
+  final List<String> soras;
+  final List<String> mySoras;
+  final List<String> tafasir;
+  final List<String> tarajim;
+  final List<String> soraStopTime;
 
   const SettingsPage({
-    required this.nameOfSora,
-    required this.numberOfJoza,
-    required this.numberOfHizb,
-    required  this.numberOfPage,
-    required this.imageOfSora,
+    required this.readers,
+    required this.soras,
+    required this.mySoras,
+    required  this.tafasir,
+    required this.tarajim,
+    required this.soraStopTime,
   });
 
   @override
-  List<Object?> get props => [nameOfSora,numberOfJoza,numberOfHizb,numberOfPage,imageOfSora];
+  List<Object?> get props => [readers,soras,mySoras,tafasir,tarajim,soraStopTime];
 
 }

@@ -17,7 +17,7 @@ class BuildDefaultCheckBox extends StatelessWidget {
     return Container(
       height: screenWidth*0.1,
       child: CheckboxListTile(
-        title:Text(text,style:TextStyle(fontSize: screenWidth*0.04,color: Color(HEX_BLUE_COLOR))),
+        title:Text(text,style:TextStyle(fontSize: screenWidth*0.038,color: Color(HEX_BLACK_COLOR))),
         onChanged:(isSelected){
         },
         value:value,

@@ -1,5 +1,6 @@
 
 import 'package:dartz/dartz.dart';
+import 'package:great_tafseers/core/error/exception.dart';
 import 'package:great_tafseers/core/error/failures.dart';
 import 'package:great_tafseers/core/platform/network_info.dart';
 import 'package:great_tafseers/features/play_page/data/datasources/play_page_local_data_source.dart';
@@ -19,8 +20,13 @@ class PlayPageRepositoryImpl implements PlayPageRepository{
   });
 
   @override
-  Future<Either<Failure, PlayPage>> choosePlay(String selected) {
-    throw UnimplementedError();
+  Future<Either<Failure, PlayPage>> choosePlay(String selected)async {
+    try {
+      final remoteHome = await remoteDataSource.choosePlay(selected);
+      return Right(remoteHome);
+    } on CacheException {
+      return Left(ServerFailure());
+    }
   }
 
 }

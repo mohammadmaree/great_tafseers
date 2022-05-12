@@ -1,6 +1,7 @@
 import 'dart:html';
 
 import 'package:dartz/dartz.dart';
+import 'package:equatable/equatable.dart';
 import 'package:great_tafseers/core/error/failures.dart';
 import 'package:great_tafseers/core/usecases/usecase.dart';
 import 'package:great_tafseers/features/play_page/domain/entities/play_page.dart';
@@ -16,4 +17,12 @@ class ChoosePlay implements UseCase<PlayPage,Params>{
     return await repository.choosePlay(params.result);
   }
 
+}
+
+class Params extends Equatable{
+  final String result;
+
+  Params({required this.result});
+  @override
+  List<Object?> get props => [];
 }

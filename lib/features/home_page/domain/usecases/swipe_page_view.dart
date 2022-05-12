@@ -1,5 +1,6 @@
 
 import 'package:dartz/dartz.dart';
+import 'package:equatable/equatable.dart';
 import 'package:great_tafseers/core/error/failures.dart';
 import 'package:great_tafseers/core/usecases/usecase.dart';
 import 'package:great_tafseers/features/home_page/domain/entities/home_page.dart';
@@ -14,4 +15,12 @@ class SwipePageView implements UseCase<HomePage,Params>{
   Future<Either<Failure, HomePage>> call(Params params) async {
     return await repository.PageViewSwipe(params.result);
   }
+}
+
+class Params extends Equatable{
+  final int result;
+
+  Params({required this.result});
+  @override
+  List<Object?> get props => [];
 }

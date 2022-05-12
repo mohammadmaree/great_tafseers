@@ -4,18 +4,18 @@ class BuildDefaultImageIcon extends StatelessWidget {
   final double screenHeight;
   final double screenWidth;
   final String image;
-  VoidCallback? function;
+  final VoidCallback function;
   BuildDefaultImageIcon({
     required this.screenHeight,
     required this.screenWidth,
     required this.image,
-    this.function,
+    required this.function,
   });
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap:(){
-        function!();
+        function();
         },
       child: Padding(
         padding: EdgeInsets.fromLTRB(screenWidth*0.18,screenHeight*0.1,screenWidth*0.18,0.0),

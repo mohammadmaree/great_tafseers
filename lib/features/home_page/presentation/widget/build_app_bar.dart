@@ -16,71 +16,71 @@ class BuildAppBar extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       children: [
-        Row(
-          children: [
-            BuildDefaultImageIcon(
-              screenWidth:screenWidth*0.091,
-              screenHeight:screenHeight*0.091,
-              image: ICON_PLAY_END,
-              function: (){
-                showDialog(
-                  barrierDismissible: false,
-                  context: context,
-                  builder:(context) => PlayShowDialog(
-                    width:screenWidth,
-                    height:screenHeight,
-                  ),
-                );
-              },
-            ),
-            BuildDefaultImageIcon(
-              screenWidth:screenWidth*0.091,
-              screenHeight:screenHeight*0.091,
-              image: ICON_PLAY_ALL,
-              function: (){
-                showDialog(
-                  barrierDismissible: false,
-                  context: context,
-                  builder:(context) => PlayShowDialog(
-                    width:screenWidth,
-                    height:screenHeight,
-                  ),
-                );
-              },
-            ),
-            BuildDefaultImageIcon(
-              screenWidth:screenWidth*0.091,
-              screenHeight:screenHeight*0.091,
-              image: ICON_AYALIST,
-            ),
-            BuildDefaultImageIcon(
-              screenWidth:screenWidth*0.091,
-              screenHeight:screenHeight*0.091,
-              image: ICON_SETTINGS,
-            ),
-            BuildDefaultImageIcon(
-              screenWidth:screenWidth*0.091,
-              screenHeight:screenHeight*0.091,
-              image: ICON_LIST,
-            ),
-            BuildDefaultImageIcon(
-              screenWidth:screenWidth*0.091,
-              screenHeight:screenHeight*0.091,
-              image:  ICON_BOOK_MARK_LIST,
-            ),
-            BuildDefaultImageIcon(
-              screenWidth:screenWidth*0.091,
-              screenHeight:screenHeight*0.091,
-              image:ICON_ADD_BOOK_MARK,
-            ),
-            BuildDefaultImageIcon(
-              screenWidth:screenWidth*0.091,
-              screenHeight:screenHeight*0.091,
-              image: ICON_SEARCH,
-            ),
-          ],
+        BuildDefaultImageIcon(
+          screenWidth:screenWidth*0.091,
+          screenHeight:screenHeight*0.091,
+          image: ICON_PLAY_END,
+          function: (){},
+        ),
+        BuildDefaultImageIcon(
+          screenWidth:screenWidth*0.091,
+          screenHeight:screenHeight*0.091,
+          image: ICON_PLAY_ALL,
+          function: (){
+            showDialog(
+              context: context,
+              builder:(context) => PlayShowDialog(
+                width:screenWidth,
+                height:screenHeight,
+              ),
+            );
+          },
+        ),
+        BuildDefaultImageIcon(
+          screenWidth:screenWidth*0.091,
+          screenHeight:screenHeight*0.091,
+          image: ICON_AYALIST,
+          function: (){},
+        ),
+        BuildDefaultImageIcon(
+          screenWidth:screenWidth*0.091,
+          screenHeight:screenHeight*0.091,
+          image: ICON_SETTINGS,
+          function: (){
+            showDialog(
+              context: context,
+              builder:(context) => SettingsShowDialog(
+                width:screenWidth,
+                height:screenHeight,
+              ),
+            );
+          },
+        ),
+        BuildDefaultImageIcon(
+          screenWidth:screenWidth*0.091,
+          screenHeight:screenHeight*0.091,
+          image: ICON_LIST,
+          function: (){},
+        ),
+        BuildDefaultImageIcon(
+          screenWidth:screenWidth*0.091,
+          screenHeight:screenHeight*0.091,
+          image:  ICON_BOOK_MARK_LIST,
+          function: (){},
+        ),
+        BuildDefaultImageIcon(
+          screenWidth:screenWidth*0.091,
+          screenHeight:screenHeight*0.091,
+          image:ICON_ADD_BOOK_MARK,
+          function: (){},
+        ),
+        BuildDefaultImageIcon(
+          screenWidth:screenWidth*0.091,
+          screenHeight:screenHeight*0.091,
+          image: ICON_SEARCH,
+          function: (){},
         ),
       ],
     );

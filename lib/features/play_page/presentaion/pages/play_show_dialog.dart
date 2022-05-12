@@ -15,12 +15,12 @@ class PlayShowDialog extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    List<String> list =['الكهف','اسماع للصفحة كاملة','استماع للحزب','استمع للجزء'];
+    List<String> list =['الكهف',LISTEN_TO_THE_FULL_PAGE,LISTEN_TO_HIZB,LISTEN_TO_JOZA];
     String? selected;
     return AlertDialog(
       actionsPadding: EdgeInsets.zero,
       titlePadding: EdgeInsets.only(top: height * 0.02),
-      title: Center(child: Text('استماع',style:TextStyle(fontSize: width*0.04,color: Color(HEX_BLACK_COLOR)),)),
+      title: Center(child: Text(LISTEN,style:TextStyle(fontSize: width*0.04,color: Color(HEX_BLACK_COLOR)),)),
       contentPadding: EdgeInsets.zero,
       buttonPadding: EdgeInsets.zero,
       shape: const RoundedRectangleBorder(
@@ -32,7 +32,7 @@ class PlayShowDialog extends StatelessWidget {
             BuildButtonDialog(
               screenWidth:width,
               screenHeight:height,
-              text:'الغاء',
+              text:EXIT,
               function: (){
                 Navigator.of(context).pop(false);
               },
@@ -40,7 +40,7 @@ class PlayShowDialog extends StatelessWidget {
             BuildButtonDialog(
               screenWidth:width,
               screenHeight:height,
-              text:'موافق',
+              text:OK,
               function: (){
                 Navigator.of(context).pop(false);
               },
@@ -62,7 +62,7 @@ class PlayShowDialog extends StatelessWidget {
               SizedBox(
                 height: height*0.01,
               ),
-              Text('الرجاء اختيار المادة المراد الاستماع لتلاوتها',style:TextStyle(fontSize: width*0.03,color: Color(HEX_BLACK_COLOR))),
+              Text(DESCRIPTION,style:TextStyle(fontSize: width*0.03,color: Color(HEX_BLACK_COLOR))),
               Container(
                 height: 135,
                 child: ListView.separated(
@@ -79,13 +79,13 @@ class PlayShowDialog extends StatelessWidget {
                 ),
               ),
               BuildDefaultCheckBox(
-                text:'تكرار الاستماع',
+                text:LISTEN_AGAIN,
                 value:false,
                 screenHeight:height,
                 screenWidth:width,
               ),
               BuildDefaultCheckBox(
-                text:'الاستماع من الصفحة الحالية',
+                text:LISTEN_NEXT_PAGE,
                 value:false,
                 screenHeight:height,
                 screenWidth:width,

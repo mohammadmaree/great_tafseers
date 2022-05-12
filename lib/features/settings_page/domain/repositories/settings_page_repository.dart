@@ -1,12 +1,13 @@
 import 'package:dartz/dartz.dart';
 import 'package:great_tafseers/core/error/failures.dart';
 import 'package:great_tafseers/features/play_page/domain/entities/play_page.dart';
+import 'package:great_tafseers/features/settings_page/domain/entities/settings_page.dart';
 
 abstract class SettingsPageRepository{
-  Future<Either<Failure,PlayPage>> choosedReader(String reader);
-  Future<Either<Failure,PlayPage>> choosedSora(String sora);
-  Future<Either<Failure,PlayPage>> mySoras(String mySora);
-  Future<Either<Failure,PlayPage>> choosedtafsir(String tafsir);
-  Future<Either<Failure,PlayPage>> choosedtarajim(String tarajim);
-  Future<Either<Failure,PlayPage>> choosedTimeStop(String mySora);
+  Future<Either<Failure,SettingsPage>> chooseReader(String reader);
+  Future<Either<Failure,SettingsPage>> chooseSora(String sora);
+  Future<Either<Failure,SettingsPage>> mySoras(List<String> mySoras);
+  Future<Either<Failure,SettingsPage>> chooseTafsir(String tafsir);
+  Future<Either<Failure,SettingsPage>> chooseTarajim(String tarajim);
+  Future<Either<Failure,SettingsPage>> chooseTimeStop(String time);
 }

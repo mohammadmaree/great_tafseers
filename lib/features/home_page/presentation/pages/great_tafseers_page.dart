@@ -65,10 +65,6 @@ class _GreatTafseersPageState extends State<GreatTafseersPage> {
                 screenHeight:screenHeight!*0.925,
               ),
             ),
-            BuildAppBar(
-              screenWidth:screenWidth!,
-              screenHeight:screenHeight!,
-            ),
             Positioned(
               top:screenHeight!*0.065,
               child: BuildDefaultImage(
@@ -121,6 +117,10 @@ class _GreatTafseersPageState extends State<GreatTafseersPage> {
                 fontSize:screenWidth!*0.015+screenHeight!*0.005,
                 bold: true,
               ),
+            ),
+            BuildAppBar(
+              screenWidth:screenWidth!,
+              screenHeight:screenHeight!,
             ),
             Positioned(
               top:screenHeight!*0.013,

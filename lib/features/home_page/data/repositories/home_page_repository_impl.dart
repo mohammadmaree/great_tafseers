@@ -21,7 +21,7 @@ class HomePageRepositoryImpl implements HomePageRepository{
   @override
   Future<Either<Failure, HomePage>> PageViewSwipe(int index)async {
     try {
-      final localHome = await localDataSource.getDataFromIndex(index);
+      final localHome = await localDataSource.pageViewSwipe(index);
       return Right(localHome);
     } on CacheException {
       return  Left(CacheFailure());

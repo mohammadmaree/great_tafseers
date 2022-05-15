@@ -13,6 +13,7 @@ class GreatTafseersPage extends StatefulWidget {
 }
 
 class _GreatTafseersPageState extends State<GreatTafseersPage> {
+
   double? screenWidth;
   double? screenHeight;
 
@@ -34,6 +35,7 @@ class _GreatTafseersPageState extends State<GreatTafseersPage> {
   }
 
 
+
   String soraName= SORA20;
   String jozaNumber=JOZA016;
   String pageNumber='321';
@@ -47,6 +49,9 @@ class _GreatTafseersPageState extends State<GreatTafseersPage> {
 
   @override
   Widget build(BuildContext context) {
+
+    BlocProvider.of<HomePageBloc>(context).add(ChangePageViewIndexEvent(index: 0));
+
     screenWidth = MediaQuery.of(context).size.width;
     screenHeight = MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
 
@@ -155,7 +160,7 @@ class _GreatTafseersPageState extends State<GreatTafseersPage> {
            ),
          ),
        );
-  },
+     },
 );
   }
 }

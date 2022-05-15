@@ -4,6 +4,7 @@ import 'package:great_tafseers/dependency_injection/dependency_injection_home_pa
 import 'package:great_tafseers/features/home_page/presentation/bloc/home_page_bloc.dart';
 import 'package:great_tafseers/features/home_page/presentation/pages/great_tafseers_page.dart';
 import 'package:great_tafseers/features/play_page/presentaion/bloc/play_page_bloc.dart';
+import 'package:great_tafseers/features/settings_page/presentaion/bloc/settings_page_bloc.dart';
 import 'dependency_injection/dependency_injection_home_page.dart' as di;
 
 void main() async{
@@ -24,6 +25,16 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<PlayPageBloc>(
           create: (_)=> PlayPageBloc(choosePlay:dI()),
+        ),
+        BlocProvider<SettingsPageBloc>(
+          create: (_)=> SettingsPageBloc(
+              chooseSora: dI(),
+              mySoras: dI(),
+              chooseTimeStop: dI(),
+              chooseTarajim: dI(),
+              chooseTafsir: dI(),
+              chooseReader: dI(),
+          ),
         ),
       ],
       child: MaterialApp(

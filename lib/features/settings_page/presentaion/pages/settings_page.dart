@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:great_tafseers/core/resource/colors.dart';
 import 'package:great_tafseers/core/resource/strings.dart';
+import 'package:great_tafseers/features/settings_page/presentaion/bloc/settings_page_bloc.dart';
 import 'package:great_tafseers/features/settings_page/presentaion/widget/build_settings_button.dart';
 
 class SettingsShowDialog extends StatelessWidget {
@@ -17,6 +19,8 @@ class SettingsShowDialog extends StatelessWidget {
       SETTINGS_TARAJIM, TimeStop,ACTIVATE_NOTIFICATIONS, HELP,ABUOT_US,PUBLISH
     ];
     List<bool>icons=[true,true,true,true,true,true, false,false,true,false];
+    return BlocBuilder<SettingsPageBloc, SettingsPageState>(
+  builder: (context, state) {
     return AlertDialog(
       actionsPadding: EdgeInsets.zero,
       titlePadding: EdgeInsets.only(top: height * 0.015,bottom:height * 0.015),
@@ -56,5 +60,7 @@ class SettingsShowDialog extends StatelessWidget {
         ),
       ),
     );
+  },
+);
   }
 }

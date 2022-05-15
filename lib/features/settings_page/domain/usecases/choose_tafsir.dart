@@ -9,7 +9,7 @@ import 'package:great_tafseers/features/settings_page/domain/repositories/settin
 class ChooseTafsir implements UseCase<SettingsPage,ChooseTafsirParams>{
   final SettingsPageRepository repository;
 
-  ChooseTafsir(this.repository);
+  ChooseTafsir({required this.repository});
 
   @override
   Future<Either<Failure, SettingsPage>> call(ChooseTafsirParams params ) async{

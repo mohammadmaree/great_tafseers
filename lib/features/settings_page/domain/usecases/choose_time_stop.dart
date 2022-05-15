@@ -8,7 +8,7 @@ import 'package:great_tafseers/features/settings_page/domain/repositories/settin
 class ChooseTimeStop implements UseCase<SettingsPage,ChooseTimeStopParams>{
   final SettingsPageRepository repository;
 
-  ChooseTimeStop(this.repository);
+  ChooseTimeStop({required this.repository});
 
   @override
   Future<Either<Failure, SettingsPage>> call(ChooseTimeStopParams params ) async{

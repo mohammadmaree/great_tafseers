@@ -9,7 +9,7 @@ import 'package:great_tafseers/features/settings_page/domain/repositories/settin
 class ChooseReader implements UseCase<SettingsPage,ChooseReaderParams>{
   final SettingsPageRepository repository;
 
-  ChooseReader(this.repository);
+  ChooseReader({required this.repository});
 
   @override
   Future<Either<Failure, SettingsPage>> call(ChooseReaderParams params ) async{

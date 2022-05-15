@@ -20,16 +20,23 @@ Future<void> init() async{
 
   //Bloc
   dI.registerFactory(
-        () => SettingsPageBloc(),
+        () => SettingsPageBloc(
+          chooseReader: dI(),
+          chooseSora: dI(),
+          chooseTafsir: dI(),
+          chooseTarajim: dI(),
+          chooseTimeStop: dI(),
+          mySoras: dI(),
+        ),
   );
 
   // Use cases
-  dI.registerLazySingleton(() => ChooseReader(dI()));
-  dI.registerLazySingleton(() => ChooseSora(dI()));
-  dI.registerLazySingleton(() => ChooseTafsir(dI()));
-  dI.registerLazySingleton(() => ChooseTarajim(dI()));
-  dI.registerLazySingleton(() => ChooseTimeStop(dI()));
-  dI.registerLazySingleton(() => MySoras(dI()));
+  dI.registerLazySingleton(() => ChooseReader(repository: dI()));
+  dI.registerLazySingleton(() => ChooseSora(repository: dI()));
+  dI.registerLazySingleton(() => ChooseTafsir(repository: dI()));
+  dI.registerLazySingleton(() => ChooseTarajim(repository: dI()));
+  dI.registerLazySingleton(() => ChooseTimeStop(repository: dI()));
+  dI.registerLazySingleton(() => MySoras(repository: dI()));
 
 
   dI.registerLazySingleton<SettingsPageRepository>(

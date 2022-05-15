@@ -9,7 +9,7 @@ import 'package:great_tafseers/features/settings_page/domain/repositories/settin
 class ChooseSora implements UseCase<SettingsPage,ChooseSoraParams>{
   final SettingsPageRepository repository;
 
-  ChooseSora(this.repository);
+  ChooseSora({required this.repository});
 
   @override
   Future<Either<Failure, SettingsPage>> call(ChooseSoraParams params ) async{

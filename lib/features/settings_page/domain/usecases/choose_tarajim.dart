@@ -8,7 +8,7 @@ import 'package:great_tafseers/features/settings_page/domain/repositories/settin
 class ChooseTarajim implements UseCase<SettingsPage,ChooseTarajimParams>{
   final SettingsPageRepository repository;
 
-  ChooseTarajim(this.repository);
+  ChooseTarajim({required this.repository});
 
   @override
   Future<Either<Failure, SettingsPage>> call(ChooseTarajimParams params) async{

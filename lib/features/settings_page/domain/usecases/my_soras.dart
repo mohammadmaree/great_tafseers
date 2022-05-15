@@ -9,7 +9,7 @@ import 'package:great_tafseers/features/settings_page/domain/repositories/settin
 class MySoras implements UseCase<SettingsPage,MySorasParams>{
   final SettingsPageRepository repository;
 
-  MySoras(this.repository);
+  MySoras({required this.repository});
 
   @override
   Future<Either<Failure, SettingsPage>> call(MySorasParams params ) async{

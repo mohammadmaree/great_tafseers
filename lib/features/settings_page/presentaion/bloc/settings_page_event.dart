@@ -14,12 +14,48 @@ class ChooseReaderEvent extends SettingsPageEvent{
   List<Object?> get props =>[reader];
 }
 
-class ChooseSoraEvent extends SettingsPageEvent{}
+class ChooseSoraEvent extends SettingsPageEvent{
+  final String sora;
 
-class ChooseTafsirEvent extends SettingsPageEvent{}
+  ChooseSoraEvent({required this.sora});
 
-class ChooseTarajimEvent extends SettingsPageEvent{}
+  @override
+  List<Object?> get props =>[sora];
+}
 
-class ChooseTimeStopEvent extends SettingsPageEvent{}
+class ChooseTafsirEvent extends SettingsPageEvent{
+  final String tafsir;
 
-class MySorasEvent extends SettingsPageEvent{}
+  ChooseTafsirEvent({required this.tafsir});
+
+  @override
+  List<Object?> get props =>[tafsir];
+}
+
+class ChooseTarajimEvent extends SettingsPageEvent{
+  final String language;
+  final String tarajim;
+
+  ChooseTarajimEvent({required this.language, required this.tarajim});
+
+  @override
+  List<Object?> get props =>[language,tarajim];
+}
+
+class ChooseTimeStopEvent extends SettingsPageEvent{
+  final String soraStopTime;
+
+  ChooseTimeStopEvent({required this.soraStopTime});
+
+  @override
+  List<Object?> get props =>[soraStopTime];
+}
+
+class MySorasEvent extends SettingsPageEvent{
+  final List<String> mySoras;
+
+  MySorasEvent({required this.mySoras});
+
+  @override
+  List<Object?> get props =>[mySoras];
+}

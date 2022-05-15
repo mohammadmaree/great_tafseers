@@ -8,6 +8,6 @@ abstract class SettingsPageRepository{
   Future<Either<Failure,SettingsPage>> chooseSora(String sora);
   Future<Either<Failure,SettingsPage>> mySoras(List<String> mySoras);
   Future<Either<Failure,SettingsPage>> chooseTafsir(String tafsir);
-  Future<Either<Failure,SettingsPage>> chooseTarajim(String tarajim);
+  Future<Either<Failure,SettingsPage>> chooseTarajim(String language , String tarajim);
   Future<Either<Failure,SettingsPage>> chooseTimeStop(String time);
 }

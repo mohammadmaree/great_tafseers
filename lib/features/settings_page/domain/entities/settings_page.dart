@@ -5,6 +5,7 @@ class SettingsPage extends Equatable {
   final String sora;
   final List<String> mySoras;
   final String tafsir;
+  final String language;
   final String tarajim;
   final String soraStopTime;
 
@@ -12,12 +13,13 @@ class SettingsPage extends Equatable {
     required this.reader,
     required this.sora,
     required this.mySoras,
-    required  this.tafsir,
+    required this.tafsir,
+    required this.language,
     required this.tarajim,
     required this.soraStopTime,
   });
 
   @override
-  List<Object?> get props => [reader,sora,mySoras,tafsir,tarajim,soraStopTime];
+  List<Object?> get props => [reader,sora,mySoras,tafsir,language,tarajim,soraStopTime];
 
 }

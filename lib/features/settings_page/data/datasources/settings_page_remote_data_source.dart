@@ -7,7 +7,7 @@ abstract class SettingsPageRemoteDataSource{
   Future<SettingsPage> chooseSora(String sora);
   Future<SettingsPage> mySoras(List<String> mySoras);
   Future<SettingsPage> chooseTafsir(String tafsir);
-  Future<SettingsPage> chooseTarajim(String tarajim);
+  Future<SettingsPage> chooseTarajim(String language , String tarajim);
   Future<SettingsPage> chooseTimeStop(String mySora);
 }
 class SettingsPageRemoteDataSourceImpl implements SettingsPageRemoteDataSource{
@@ -32,7 +32,7 @@ class SettingsPageRemoteDataSourceImpl implements SettingsPageRemoteDataSource{
   }
 
   @override
-  Future<SettingsPage> chooseTarajim(String tarajim) {
+  Future<SettingsPage> chooseTarajim(String language , String tarajim) {
     throw UnimplementedError();
   }
 

@@ -10,19 +10,17 @@ import 'package:great_tafseers/features/play_page/domain/repositories/play_page_
 
 class PlayPageRepositoryImpl implements PlayPageRepository{
   final PlayPageRemoteDataSource remoteDataSource;
-  final PlayPageLocalDataSource localDataSource;
   final NetworkInfo networkInfo;
 
   PlayPageRepositoryImpl({
     required this.remoteDataSource,
-    required this.localDataSource,
     required this.networkInfo,
   });
 
   @override
-  Future<Either<Failure, PlayPage>> choosePlay(String selected)async {
+  Future<Either<Failure, PlayPage>> choosePlay(String selected, bool nextPage, bool repetition)async {
     try {
-      final remoteHome = await remoteDataSource.choosePlay(selected);
+      final remoteHome = await remoteDataSource.choosePlay(selected,nextPage,repetition);
       return Right(remoteHome);
     } on CacheException {
       return Left(ServerFailure());

@@ -6,22 +6,22 @@ import 'package:great_tafseers/core/usecases/usecase.dart';
 import 'package:great_tafseers/features/settings_page/domain/entities/settings_page.dart';
 import 'package:great_tafseers/features/settings_page/domain/repositories/settings_page_repository.dart';
 
-class ChooseTafsir implements UseCase<SettingsPage,Params>{
+class ChooseTafsir implements UseCase<SettingsPage,ChooseTafsirParams>{
   final SettingsPageRepository repository;
 
   ChooseTafsir(this.repository);
 
   @override
-  Future<Either<Failure, SettingsPage>> call(Params params ) async{
-    return await repository.chooseTafsir(params.result.tafsir);
+  Future<Either<Failure, SettingsPage>> call(ChooseTafsirParams params ) async{
+    return await repository.chooseTafsir(params.tafsir);
   }
 
 }
 
-class Params extends Equatable{
-  final SettingsPage result;
+class ChooseTafsirParams extends Equatable{
+  final String tafsir;
 
-  Params({required this.result});
+  ChooseTafsirParams({required this.tafsir});
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [tafsir];
 }

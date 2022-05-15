@@ -12,21 +12,22 @@ part 'play_page_state.dart';
 class PlayPageBloc extends Bloc<PlayPageEvent, PlayPageState> {
   final ChoosePlay  choosePlay;
 
-  PlayPageBloc(this.choosePlay) : super(PlayPageInitial());
+  PlayPageBloc({required this.choosePlay}) : super(PlayPageInitial());
 
   @override
   Stream<PlayPageState> mapEventToState(PlayPageEvent event,) async*{
     if(event is submit)
       {
         yield ChooseReaderStateLoading();
-        final result =await choosePlay(Params(result: event.result));
+        final result =await choosePlay(ChoosePlayParams(selected: event.selected,nextPage: event.nextPage,repetition: event.repetition ));
         yield* result.fold((error) async*{
           yield ChooseReaderStateError(message: error.toString());
-        }, (r)async*{
-          if(event.result==r.nameOfSora)yield ChooseReaderStateLoaded(result: r.nameOfSora);
-          if(event.result==r.numberOfPage)yield ChooseReaderStateLoaded(result: r.numberOfPage);
-          if(event.result==r.numberOfHizb)yield ChooseReaderStateLoaded(result: r.numberOfHizb);
-          if(event.result==r.numberOfJoza)yield ChooseReaderStateLoaded(result: r.numberOfJoza);
+        }, (result)async*{
+          yield ChooseReaderStateLoaded(playPage:result);
+          //if(event.selected==r.nameOfSora)yield ChooseReaderStateLoaded(playPage:result);
+          // if(event.selected==r.numberOfPage)yield ChooseReaderStateLoaded(playPage:result);
+          // if(event.selected==r.numberOfHizb)yield ChooseReaderStateLoaded(playPage:result);
+          // if(event.selected==r.numberOfJoza)yield ChooseReaderStateLoaded(playPage:result);
         });
       }
   }

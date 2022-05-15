@@ -10,9 +10,9 @@ class PlayPageInitial extends PlayPageState {}
 
 class ChooseReaderStateLoading extends PlayPageState {}
 class ChooseReaderStateLoaded extends PlayPageState {
-  final String result;
+  final PlayPage playPage;
 
-  ChooseReaderStateLoaded({required this.result});
+  ChooseReaderStateLoaded({required this.playPage});
 }
 class ChooseReaderStateError extends PlayPageState {
   final String message;

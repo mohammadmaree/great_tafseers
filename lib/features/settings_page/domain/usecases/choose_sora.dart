@@ -6,22 +6,22 @@ import 'package:great_tafseers/features/home_page/domain/usecases/change_page_vi
 import 'package:great_tafseers/features/settings_page/domain/entities/settings_page.dart';
 import 'package:great_tafseers/features/settings_page/domain/repositories/settings_page_repository.dart';
 
-class ChooseSora implements UseCase<SettingsPage,Params>{
+class ChooseSora implements UseCase<SettingsPage,ChooseSoraParams>{
   final SettingsPageRepository repository;
 
   ChooseSora(this.repository);
 
   @override
-  Future<Either<Failure, SettingsPage>> call(Params params ) async{
-    return await repository.chooseSora(params.result.sora);
+  Future<Either<Failure, SettingsPage>> call(ChooseSoraParams params ) async{
+    return await repository.chooseSora(params.sora);
   }
 
 }
 
-class Params extends Equatable{
-  final SettingsPage result;
+class ChooseSoraParams extends Equatable{
+  final String sora;
 
-  Params({required this.result});
+  ChooseSoraParams({required this.sora});
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [sora];
 }

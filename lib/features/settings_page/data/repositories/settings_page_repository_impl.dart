@@ -59,9 +59,9 @@ class SettingsPageRepositoryImpl implements SettingsPageRepository{
   }
 
   @override
-  Future<Either<Failure, SettingsPage>> chooseTarajim(String tarajim)async{
+  Future<Either<Failure, SettingsPage>> chooseTarajim(String language , String tarajim)async{
     try {
-      final remotePlay = await remoteDataSource.chooseTarajim(tarajim);
+      final remotePlay = await remoteDataSource.chooseTarajim(tarajim,language);
       return Right(remotePlay);
     } on Exception {
       return Left(ServerFailure());

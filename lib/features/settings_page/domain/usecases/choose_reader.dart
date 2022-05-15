@@ -6,23 +6,23 @@ import 'package:great_tafseers/core/usecases/usecase.dart';
 import 'package:great_tafseers/features/settings_page/domain/entities/settings_page.dart';
 import 'package:great_tafseers/features/settings_page/domain/repositories/settings_page_repository.dart';
 
-class ChooseReader implements UseCase<SettingsPage,Params>{
+class ChooseReader implements UseCase<SettingsPage,ChooseReaderParams>{
   final SettingsPageRepository repository;
 
   ChooseReader(this.repository);
 
   @override
-  Future<Either<Failure, SettingsPage>> call(Params params ) async{
-    return await repository.chooseReader(params.result.reader);
+  Future<Either<Failure, SettingsPage>> call(ChooseReaderParams params ) async{
+    return await repository.chooseReader(params.reader);
   }
 
 }
 
 
-class Params extends Equatable{
-  final SettingsPage result;
+class ChooseReaderParams extends Equatable{
+  final String reader;
 
-  Params({required this.result});
+  ChooseReaderParams({required this.reader});
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [reader];
 }

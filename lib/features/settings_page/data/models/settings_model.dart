@@ -6,6 +6,7 @@ class SettingsModel extends SettingsPage {
         required String sora,
         required List<String> mySoras,
         required String tafsir,
+        required String language,
         required String tarajim,
         required String soraStopTime,
       })
@@ -14,6 +15,7 @@ class SettingsModel extends SettingsPage {
     sora: sora,
     mySoras : mySoras,
     tafsir: tafsir,
+    language: language,
     tarajim: tarajim,
     soraStopTime: soraStopTime,
   );
@@ -24,6 +26,7 @@ class SettingsModel extends SettingsPage {
       sora: json["soras"],
       mySoras: json["mySoras"],
       tafsir: json["tafasir"],
+      language : json["language"],
       tarajim: json["tarajim"],
       soraStopTime: json["soraStopTime"],
     );
@@ -35,6 +38,7 @@ class SettingsModel extends SettingsPage {
       'soras': sora,
       'mySoras':mySoras,
       'tafasir': tafsir,
+      'language':language,
       'tarajim': tarajim,
       'soraStopTime':soraStopTime,
     };

@@ -16,7 +16,7 @@ class PlayPageBloc extends Bloc<PlayPageEvent, PlayPageState> {
 
   @override
   Stream<PlayPageState> mapEventToState(PlayPageEvent event,) async*{
-    if(event is submit)
+    if(event is SubmitEvent)
       {
         yield ChooseReaderStateLoading();
         final result =await choosePlay(ChoosePlayParams(selected: event.selected,nextPage: event.nextPage,repetition: event.repetition ));

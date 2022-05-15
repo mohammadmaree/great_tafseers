@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:great_tafseers/dependency_injection/dependency_injection_home_page.dart';
 import 'package:great_tafseers/features/home_page/presentation/bloc/home_page_bloc.dart';
 import 'package:great_tafseers/features/home_page/presentation/pages/great_tafseers_page.dart';
+import 'package:great_tafseers/features/play_page/presentaion/bloc/play_page_bloc.dart';
 import 'dependency_injection/dependency_injection_home_page.dart' as di;
 
 void main() async{
@@ -20,6 +21,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider<HomePageBloc>(
             create: (_)=> HomePageBloc(changePageViewIndex: dI()),
+        ),
+        BlocProvider<PlayPageBloc>(
+          create: (_)=> PlayPageBloc(choosePlay:dI()),
         ),
       ],
       child: MaterialApp(

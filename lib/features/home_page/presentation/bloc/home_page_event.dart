@@ -1,10 +1,13 @@
 part of 'home_page_bloc.dart';
 
-abstract class HomePageEvent extends Equatable {}
+abstract class HomePageEvent extends Equatable {
+  @override
+  List<Object?> get props =>[];
+}
 
-class GetDataHomePageEvent extends HomePageEvent {
+class ChangePageViewIndexEvent extends HomePageEvent {
   final int index;
-  GetDataHomePageEvent({required this.index});
+  ChangePageViewIndexEvent({required this.index});
 
   @override
   List<Object?> get props =>[index];

@@ -12,9 +12,8 @@ part 'play_page_state.dart';
 class PlayPageBloc extends Bloc<PlayPageEvent, PlayPageState> {
   final ChoosePlay  choosePlay;
 
-  PlayPageBloc(this.choosePlay);
-  @override
-  PlayPageState get initialState => PlayPageInitial();
+  PlayPageBloc(this.choosePlay) : super(PlayPageInitial());
+
   @override
   Stream<PlayPageState> mapEventToState(PlayPageEvent event,) async*{
     if(event is submit)

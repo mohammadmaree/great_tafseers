@@ -6,21 +6,21 @@ import 'package:great_tafseers/core/usecases/usecase.dart';
 import 'package:great_tafseers/features/home_page/domain/entities/home_page.dart';
 import 'package:great_tafseers/features/home_page/domain/repositories/home_page_repository.dart';
 
-class SwipePageView implements UseCase<HomePage,Params>{
+class ChangePageViewIndex implements UseCase<HomePage,ChangePageViewIndexParams>{
   final HomePageRepository repository;
 
-  SwipePageView(this.repository);
+  ChangePageViewIndex(this.repository);
 
   @override
-  Future<Either<Failure, HomePage>> call(Params params) async {
-    return await repository.PageViewSwipe(params.result);
+  Future<Either<Failure, HomePage>> call(ChangePageViewIndexParams params) async {
+    return await repository.ChangePageViewIndex(params.result);
   }
 }
 
-class Params extends Equatable{
+class ChangePageViewIndexParams extends Equatable{
   final int result;
 
-  Params({required this.result});
+  ChangePageViewIndexParams({required this.result});
   @override
   List<Object?> get props => [];
 }

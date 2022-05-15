@@ -1,11 +1,10 @@
-import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:get_it/get_it.dart';
 import 'package:great_tafseers/core/platform/network_info.dart';
 import 'package:great_tafseers/features/home_page/data/datasources/home_page_local_data_source.dart';
 import 'package:great_tafseers/features/home_page/data/datasources/home_page_remote_data_source.dart';
 import 'package:great_tafseers/features/home_page/data/repositories/home_page_repository_impl.dart';
 import 'package:great_tafseers/features/home_page/domain/repositories/home_page_repository.dart';
-import 'package:great_tafseers/features/home_page/domain/usecases/swipe_page_view.dart';
+import 'package:great_tafseers/features/home_page/domain/usecases/change_page_view_index.dart';
 import 'package:great_tafseers/features/home_page/presentation/bloc/home_page_bloc.dart';
 import 'package:great_tafseers/features/play_page/data/datasources/play_page_remote_data_source.dart';
 import 'package:great_tafseers/features/play_page/data/repositories/play_page_repository_impl.dart';
@@ -20,6 +19,7 @@ import 'package:great_tafseers/features/settings_page/domain/usecases/choose_taf
 import 'package:great_tafseers/features/settings_page/domain/usecases/choose_tarajim.dart';
 import 'package:great_tafseers/features/settings_page/domain/usecases/choose_time_stop.dart';
 import 'package:great_tafseers/features/settings_page/domain/usecases/my_soras.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 
 final dI = GetIt.instance;
@@ -28,12 +28,12 @@ Future<void> init() async{
   //Bloc
   dI.registerFactory(
         () => HomePageBloc(
-      swipePageView: dI(),
+      changePageViewIndex: dI(),
     ),
   );
 
   // Use cases
-  dI.registerLazySingleton(() => SwipePageView(dI()));
+  dI.registerLazySingleton(() => ChangePageViewIndex(dI()));
 
   dI.registerLazySingleton(() => ChoosePlay(dI()));
 
@@ -48,8 +48,6 @@ Future<void> init() async{
   dI.registerLazySingleton<HomePageRepository>(
   () => HomePageRepositoryImpl(
     localDataSource:dI(),
-    networkInfo:dI(),
-    remoteDataSource:dI(),
   ),
   );
   // PlayPageRepository
@@ -90,6 +88,6 @@ Future<void> init() async{
   dI.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(dI()));
 
   //! External
-  dI.registerLazySingleton(() => DataConnectionChecker());
+  dI.registerLazySingleton(() => InternetConnectionChecker());
 
 }

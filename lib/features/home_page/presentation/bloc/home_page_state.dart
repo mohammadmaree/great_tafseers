@@ -7,14 +7,15 @@ abstract class HomePageState extends Equatable {
 
 class HomePageInitial extends HomePageState {}
 
-class ViewPageStateLoading extends HomePageState {}
-class ViewPageStateLoaded extends HomePageState {
+class ChangePageViewIndexStateLoading extends HomePageState {}
+class ChangePageViewIndexStateLoaded extends HomePageState {
   final HomePage homePage;
 
-  ViewPageStateLoaded(this.homePage);
+  ChangePageViewIndexStateLoaded(this.homePage);
+
 }
-class ViewPageStateError extends HomePageState {
+class ChangePageViewIndexStateError extends HomePageState {
   final String message;
 
-  ViewPageStateError(this.message);
+  ChangePageViewIndexStateError(this.message);
 }

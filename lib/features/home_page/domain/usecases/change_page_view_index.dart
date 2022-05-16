@@ -22,5 +22,5 @@ class ChangePageViewIndexParams extends Equatable{
 
   ChangePageViewIndexParams({required this.result});
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [result];
 }

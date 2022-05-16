@@ -20,11 +20,11 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
       ) async* {
     if (event is ChangePageViewIndexEvent) {
       yield ChangePageViewIndexStateLoading();
-      final failureOrPageView = await changePageViewIndex(
+      final result = await changePageViewIndex(
           ChangePageViewIndexParams(result: event.index));
-      yield failureOrPageView.fold(
+      yield result.fold(
               (failure) => ChangePageViewIndexStateError('failure'),
-              (home) => ChangePageViewIndexStateLoaded(home));
+              (result) => ChangePageViewIndexStateLoaded(result));
     }
 
   }

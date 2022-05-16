@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:great_tafseers/core/resource/colors.dart';
 import 'package:great_tafseers/core/resource/strings.dart';
-import 'package:great_tafseers/features/play_page/presentaion/bloc/play_page_bloc.dart';
 import 'package:great_tafseers/features/play_page/presentaion/widget/build_button_dialog.dart';
 import 'package:great_tafseers/features/play_page/presentaion/widget/build_default_check_box.dart';
 import 'package:great_tafseers/features/play_page/presentaion/widget/build_default_radio.dart';
@@ -19,8 +17,6 @@ class PlayShowDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     List<String> list =['الكهف',LISTEN_TO_THE_FULL_PAGE,LISTEN_TO_HIZB,LISTEN_TO_JOZA];
     String? selected;
-    return BlocBuilder<PlayPageBloc, PlayPageState>(
-  builder: (context, state) {
     return AlertDialog(
       actionsPadding: EdgeInsets.zero,
       titlePadding: EdgeInsets.only(top: height * 0.02),
@@ -70,16 +66,16 @@ class PlayShowDialog extends StatelessWidget {
               Container(
                 height: 135,
                 child: ListView.separated(
-                    itemBuilder: (context, index) =>  BuildDefaultRadio(
-                      value:'sora',
-                      selected:selected,
-                      text: list[index],
-                      function:(){},
-                      screenWidth:width,
-                      screenHeight:height,
-                    ),
-                    separatorBuilder:(context, index) => Container(height:1.0,width:width,color: Colors.grey),
-                    itemCount: 4,
+                  itemBuilder: (context, index) =>  BuildDefaultRadio(
+                    value:'sora',
+                    selected:selected,
+                    text: list[index],
+                    function:(){},
+                    screenWidth:width,
+                    screenHeight:height,
+                  ),
+                  separatorBuilder:(context, index) => Container(height:1.0,width:width,color: Colors.grey),
+                  itemCount: 4,
                 ),
               ),
               BuildDefaultCheckBox(
@@ -99,7 +95,5 @@ class PlayShowDialog extends StatelessWidget {
         ),
       ),
     );
-  },
-);
   }
 }

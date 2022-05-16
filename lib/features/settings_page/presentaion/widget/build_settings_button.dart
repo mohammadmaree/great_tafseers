@@ -6,23 +6,30 @@ class BuildSettingsButton extends StatelessWidget {
   final double screenHeight;
   final String text;
   final bool isIcon;
+  final VoidCallback function;
   BuildSettingsButton({
     required this.screenWidth,
     required this.screenHeight,
     required this.text,
     required this.isIcon,
+    required this.function,
   });
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: screenWidth*0.03,vertical: screenWidth*0.028),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          isIcon?Icon(Icons.arrow_back_ios_outlined,color: Color(HEX_GRAY_COLOR),size: screenWidth*0.045):
-          Container(),
-          Text(text,style: TextStyle(fontSize: screenWidth*0.04)),
-        ],),
+    return InkWell(
+      onTap: (){
+        function();
+      },
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: screenWidth*0.03,vertical: screenWidth*0.028),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            isIcon?Icon(Icons.arrow_back_ios_outlined,color: Color(HEX_GRAY_COLOR),size: screenWidth*0.045):
+            Container(),
+            Text(text,style: TextStyle(fontSize: screenWidth*0.04)),
+          ],),
+      ),
     );
   }
 }

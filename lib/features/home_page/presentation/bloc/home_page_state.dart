@@ -16,6 +16,6 @@ class ChangePageViewIndexStateLoaded extends HomePageState {
 }
 class ChangePageViewIndexStateError extends HomePageState {
   final String message;
-
   ChangePageViewIndexStateError(this.message);
+
 }

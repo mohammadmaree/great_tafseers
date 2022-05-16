@@ -19,8 +19,6 @@ class SettingsShowDialog extends StatelessWidget {
       SETTINGS_TARAJIM, TimeStop,ACTIVATE_NOTIFICATIONS, HELP,ABUOT_US,PUBLISH
     ];
     List<bool>icons=[true,true,true,true,true,true, false,false,true,false];
-    return BlocBuilder<SettingsPageBloc, SettingsPageState>(
-  builder: (context, state) {
     return AlertDialog(
       actionsPadding: EdgeInsets.zero,
       titlePadding: EdgeInsets.only(top: height * 0.015,bottom:height * 0.015),
@@ -29,7 +27,7 @@ class SettingsShowDialog extends StatelessWidget {
       backgroundColor: Color(HEX_BLUE_GRAY_COLOR),
       buttonPadding: EdgeInsets.zero,
       shape: const RoundedRectangleBorder(
-       // side: BorderSide(width: 0.05,color: Color(HEX_BLACK_COLOR)),
+        // side: BorderSide(width: 0.05,color: Color(HEX_BLACK_COLOR)),
           borderRadius: BorderRadius.all(Radius.circular(2))),
       content: ConstrainedBox(
         constraints: BoxConstraints(
@@ -50,6 +48,7 @@ class SettingsShowDialog extends StatelessWidget {
                     isIcon: icons[index],
                     screenWidth:width,
                     screenHeight:height,
+                    function:(){},
                   ),
                   separatorBuilder:(context, index) => Container(height:0.085,width:width,color: Colors.grey),
                   itemCount: titles.length,
@@ -60,7 +59,5 @@ class SettingsShowDialog extends StatelessWidget {
         ),
       ),
     );
-  },
-);
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:great_tafseers/core/resource/images.dart';
+import 'package:great_tafseers/features/home_page/presentation/bloc/home_page_bloc.dart';
 import 'package:great_tafseers/features/home_page/presentation/pages/great_tafseers_page.dart';
 import 'package:great_tafseers/features/home_page/presentation/widget/build_default_image.dart';
 
@@ -16,6 +18,7 @@ class _StartUpPageState extends State<StartUpPage> {
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 3)).then((value) async{
+      BlocProvider.of<HomePageBloc>(context).add(ChangePageViewIndexEvent(index:0));
       Navigator.of(context).pushReplacementNamed(GreatTafseersPage.routeName);
     },
     );
